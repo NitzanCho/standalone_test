@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>TrailQuest – Hiking Wisdom & Inspiration</title>
   <style>
     :root {
@@ -12,6 +12,7 @@
       --text: #2e2e2e;
       --accent: #ff8f00;
     }
+
     body {
       margin: 0;
       font-family: system-ui, sans-serif;
@@ -19,25 +20,33 @@
       color: var(--text);
       line-height: 1.6;
     }
+
     header {
       background: linear-gradient(135deg, var(--green), var(--light));
       color: white;
-      padding: 3rem 1rem;
       text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 3rem;
+      padding: 2rem 1rem;
     }
 
-    /* Navbar Styling */
+    header img.banner {
+      max-width: 100%;
+      height: auto;
+      margin-top: 1rem;
+      border-radius: 10px;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
     nav {
       background: var(--green);
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      position: relative;
     }
+
     nav ul {
       list-style: none;
       margin: 0;
@@ -45,62 +54,42 @@
       display: flex;
       flex-wrap: wrap;
     }
+
     nav ul li {
       position: relative;
     }
+
     nav > ul > li > a {
       display: block;
       padding: 1rem;
       color: white;
       text-decoration: none;
       text-align: center;
-      transition: background 0.3s;
       min-width: 160px;
     }
+
     nav ul li a:hover {
       background: var(--light);
       color: var(--green);
     }
 
-    /* Dropdown Menu */
     nav ul li ul {
       display: none;
       position: absolute;
-      top: 100%;
-      left: 0;
-      min-width: 200px;
       background: white;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      min-width: 200px;
       z-index: 1000;
     }
+
     nav ul li:hover ul {
       display: block;
     }
+
     nav ul li ul li a {
       color: var(--green);
-      background: white;
       padding: 0.8rem;
       display: block;
       text-align: left;
-    }
-    nav ul li ul li a:hover {
-      background: var(--light);
-      color: var(--green);
-    }
-
-    /* Responsive */
-    @media (max-width: 600px) {
-      nav ul {
-        flex-direction: column;
-        align-items: stretch;
-      }
-      nav ul li {
-        width: 100%;
-      }
-      nav ul li ul {
-        position: static;
-        box-shadow: none;
-      }
     }
 
     main {
@@ -108,6 +97,7 @@
       margin: auto;
       padding: 2rem 1rem;
     }
+
     section {
       background: white;
       padding: 1.5rem;
@@ -115,128 +105,159 @@
       margin-bottom: 2rem;
       box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
     }
+
     section h2 {
       color: var(--green);
-      margin-top: 0;
+      display: flex;
+      align-items: center;
     }
-    ul.blog-list, ul.trail-list {
+
+    section h2 svg {
+      width: 24px;
+      height: 24px;
+      margin-right: 0.5rem;
+      fill: var(--accent);
+    }
+
+    .trail-list, .blog-list {
       list-style: none;
-      padding: 0;
+      padding-left: 0;
     }
-    ul.blog-list li::before, ul.trail-list li::before {
+
+    .trail-list li::before, .blog-list li::before {
       content: "➤ ";
       color: var(--accent);
     }
+
     footer {
       text-align: center;
       padding: 2rem 1rem;
       font-size: 0.9rem;
       color: #555;
     }
+
+    @media (max-width: 600px) {
+      nav ul {
+        flex-direction: column;
+      }
+      nav ul li {
+        width: 100%;
+      }
+    }
   </style>
 </head>
 <body>
-  <header>
-    <h1>🥾 TrailQuest – Hiking Wisdom & Inspiration</h1>
-    <p>Dive deep into gear guides, trail stories, planning tips & blog highlights</p>
-  </header>
 
-  <!-- Navigation with dropdown -->
-  <nav>
-    <ul>
-      <li><a href="#">Explore</a>
-        <ul>
-          <li><a href="#favorites">Our Favorite Trails</a></li>
-          <li><a href="#dogs">Dog Friendly Trails</a></li>
-          <li><a href="#inns">Inn-to-Inn Hiking</a></li>
-        </ul>
-      </li>
-      <li><a href="#">Resources</a>
-        <ul>
-          <li><a href="#gear">Recommended Gear</a></li>
-          <li><a href="#maps">Trail Maps</a></li>
-          <li><a href="#beginners">Beginner Tips</a></li>
-        </ul>
-      </li>
-      <li><a href="#">Community</a>
-        <ul>
-          <li><a href="#insights">Blog Insights</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="#contact">Contact Us</a></li>
-        </ul>
-      </li>
-    </ul>
-  </nav>
+<header>
+  <h1>🥾 TrailQuest – Hiking Wisdom & Inspiration</h1>
+  <p>Gear guides, trail stories, and planning tips from seasoned hikers</p>
+  <img class="banner" src="https://images.unsplash.com/photo-1501706362039-c6e809eeedee?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Scenic mountain trail banner">
+</header>
 
-  <main>
-    <section id="favorites">
-      <h2>🏞 Our Favorite Hiking Trails</h2>
-      <p>From the Pacific Northwest to Patagonia, discover trails backed by experts and bloggers alike.</p>
-      <ul class="trail-list">
-        <li>Columbia River Gorge Loop (WA)</li>
-        <li>Torres del Paine “W” Trek (Chile)</li>
-        <li>Mount Tamalpais Summit Trail (CA)</li>
-      </ul>
-    </section>
-
-    <section id="dogs">
-      <h2>🐕 Dog Friendly Trails</h2>
-      <p>Explore nature with your four-legged friend. These trails are safe, shady, and leash-friendly.</p>
-    </section>
-
-    <section id="gear">
-      <h2>🎒 Recommended Gear</h2>
-      <p>Based on CleverHiker & Adventure Alan reviews. Essentials include:</p>
+<nav>
+  <ul>
+    <li><a href="#">Explore</a>
       <ul>
-        <li>Ultralight Pack</li>
-        <li>Trekking Poles</li>
-        <li>Water Filter Bottle</li>
+        <li><a href="#favorites">Our Favorite Trails</a></li>
+        <li><a href="#dogs">Dog Friendly Trails</a></li>
+        <li><a href="#inns">Inn-to-Inn Hiking</a></li>
       </ul>
-    </section>
+    </li>
+    <li><a href="#">Resources</a>
+      <ul>
+        <li><a href="#gear">Recommended Gear</a></li>
+        <li><a href="#maps">Trail Maps</a></li>
+        <li><a href="#beginners">Beginner Tips</a></li>
+      </ul>
+    </li>
+    <li><a href="#">Community</a>
+      <ul>
+        <li><a href="#insights">Blog Insights</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 
-    <section id="maps">
-      <h2>🗺 Trail Maps & Planning</h2>
-      <p>Plan smarter with elevation, trailhead access, and seasonal forecasts.</p>
-    </section>
+<main>
+  <section id="favorites">
+    <h2>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2l3 6 6 .9-4.5 4.3 1.1 6.5L12 17.3 6.4 19.7 7.5 13.2 3 8.9 9 8z"/></svg>
+      Our Favorite Hiking Trails
+    </h2>
+    <p>Hand-picked favorites for every level of hiker.</p>
+    <ul class="trail-list">
+      <li>Columbia River Gorge Loop (WA)</li>
+      <li>Torres del Paine “W” Trek (Chile)</li>
+      <li>Mount Tamalpais Summit Trail (CA)</li>
+    </ul>
+    <img src="https://images.unsplash.com/photo-1564430032990-6086a09db021?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Trail photo" style="width:100%; border-radius:8px; margin-top:1rem;">
+  </section>
 
-    <section id="beginners">
-      <h2>🧭 Beginner Tips</h2>
-      <p>Pack light, research weather, and start small. Hike happy!</p>
-    </section>
+  <section id="dogs">
+    <h2>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 18H9v-2H7v-2h2v-2h2v2h2v2h-2v2zm7-6c0-1.66-1.34-3-3-3H9c-1.66 0-3 1.34-3 3v6h2v2h6v-2h2v-6z"/></svg>
+      Dog Friendly Trails
+    </h2>
+    <p>Trails where tails can wag freely (on a leash!).</p>
+    <img src="https://images.unsplash.com/photo-1616874533495-93515c4e75d0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Dog on a hike" style="width:100%; border-radius:8px; margin-top:1rem;">
+  </section>
 
-    <section id="inns">
-      <h2>🏨 Inn-to-Inn Hiking</h2>
-      <p>Experience Europe-style trekking: walk by day, sleep in cozy lodges by night.</p>
-    </section>
+  <section id="gear">
+    <h2>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 21h6v-2H9v2zm-6-3h18v-2H3v2zm3-4h12v-2H6v2zm3-4h6v-2H9v2zm-3-4h12V4H6v2z"/></svg>
+      Recommended Gear
+    </h2>
+    <ul class="trail-list">
+      <li>Ultralight backpack & poles</li>
+      <li>Merino wool socks & base layers</li>
+      <li>GPS & offline trail apps</li>
+    </ul>
+    <img src="https://images.unsplash.com/photo-1504729562823-af7a86dcd66b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Gear layout" style="width:100%; border-radius:8px; margin-top:1rem;">
+  </section>
 
-    <section id="insights">
-      <h2>📚 Blog Insights</h2>
-      <p>Learn from top voices in the hiking world including The Trek, Section Hiker, and Bearfoot Theory.</p>
-    </section>
+  <section id="maps">
+    <h2>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.5 3l-5.6 2.2L9 3 3.5 5v16l6-2.5L15 21l5.5-2.5V3zM9 5l6 2.5v11l-6-2.5V5z"/></svg>
+      Trail Maps
+    </h2>
+    <p>Use tools like Gaia GPS, AllTrails, and Caltopo to plan your hikes intelligently.</p>
+  </section>
 
-    <section id="faq">
-      <h2>❓ FAQ</h2>
-      <p><strong>What’s the best hike for first-timers?</strong> Start with short, well-marked loops like Twin Falls (WA).</p>
-    </section>
+  <section id="insights">
+    <h2>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/></svg>
+      Blog Insights
+    </h2>
+    <ul class="blog-list">
+      <li><a href="https://thetrek.co" target="_blank">The Trek</a> – Thru-hiking stories & gear reviews</li>
+      <li><a href="https://sectionhiker.com" target="_blank">Section Hiker</a> – Lightweight philosophy & gear</li>
+      <li><a href="https://bearfoottheory.com" target="_blank">Bearfoot Theory</a> – Outdoor women & vanlife tips</li>
+    </ul>
+  </section>
 
-    <section id="contact">
-      <h2>📬 Contact Us</h2>
-      <p>Email: <a href="mailto:hello@trailquest.example">hello@trailquest.example</a></p>
-    </section>
-  </main>
+  <section id="contact">
+    <h2>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 8V7l-3 2-2-1.5L14 10l-2-1.5L8 10 6 8l-3 2v1l3 2 2-1.5 2 1.5 2-1.5 2 1.5 3-2z"/></svg>
+      Contact Us
+    </h2>
+    <p>Email us at: <a href="mailto:hello@trailquest.example">hello@trailquest.example</a></p>
+  </section>
+</main>
 
-  <footer>
-    &copy; 2025 TrailQuest. Explore Responsibly.
-  </footer>
+<footer>
+  &copy; 2025 TrailQuest. Tread lightly.
+</footer>
 
-  <!-- JS fallback for touch devices (optional) -->
-  <script>
-    // For touch screens: allow click to open dropdown
-    document.querySelectorAll('nav > ul > li').forEach(item => {
-      item.addEventListener('touchstart', function(e) {
-        this.classList.toggle('open');
-      });
+<script>
+  // Touch device menu fallback (optional)
+  document.querySelectorAll('nav > ul > li').forEach(item => {
+    item.addEventListener('touchstart', function () {
+      this.classList.toggle('open');
     });
-  </script>
+  });
+</script>
+
 </body>
 </html>
