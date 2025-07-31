@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>No-Asset Landing Page</title>
+  <title>TrailQuest | Hiking Without Limits</title>
   <style>
     :root {
-      --primary: #4F46E5;
-      --text: #1F2937;
-      --bg: #F9FAFB;
+      --primary: #2e7d32;
+      --secondary: #a5d6a7;
+      --bg: #f1f8e9;
+      --text: #2e2e2e;
     }
 
     body {
@@ -22,7 +23,7 @@
     header {
       background: var(--primary);
       color: white;
-      padding: 2rem 1rem;
+      padding: 1.5rem 1rem;
       text-align: center;
     }
 
@@ -31,93 +32,109 @@
       font-size: 2.5rem;
     }
 
-    header p {
-      font-size: 1.2rem;
-      margin-top: 0.5rem;
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background: #388e3c;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 1rem;
+      flex: 1 1 200px;
+      text-align: center;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background: #2e7d32;
     }
 
     main {
-      padding: 2rem 1rem;
       max-width: 800px;
       margin: auto;
-    }
-
-    .cta-button {
-      background: var(--primary);
-      color: white;
-      padding: 1rem 2rem;
-      font-size: 1rem;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background 0.3s;
-      text-decoration: none;
-      display: inline-block;
-      margin-top: 1rem;
-    }
-
-    .cta-button:hover {
-      background: #3730a3;
+      padding: 2rem 1rem;
     }
 
     section {
-      margin: 2rem 0;
-    }
-
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .feature {
+      margin-bottom: 2rem;
       background: white;
-      padding: 1rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.05);
     }
 
-    .feature h3 {
+    section h2 {
       margin-top: 0;
+      color: var(--primary);
     }
 
     footer {
       text-align: center;
       padding: 2rem 1rem;
       font-size: 0.9rem;
-      color: #666;
+      color: #555;
+    }
+
+    @media (max-width: 600px) {
+      nav a {
+        flex: 1 1 100%;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Welcome to CleanStart</h1>
-    <p>Beautiful landing pages with zero assets</p>
-    <a href="#features" class="cta-button">Learn More</a>
+    <h1>🥾 TrailQuest</h1>
+    <p>Explore the outdoors — one trail at a time</p>
   </header>
 
+  <nav>
+    <a href="#favorites">Our Favorite Hiking Trails</a>
+    <a href="#dogs">Dog Friendly Hiking Trails</a>
+    <a href="#gear">Recommended Gear</a>
+    <a href="#maps">Trail Maps</a>
+    <a href="#contact">Contact Us</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+
   <main>
-    <section id="features">
-      <h2>Why Use This Approach?</h2>
-      <div class="features">
-        <div class="feature">
-          <h3>🚀 Fast</h3>
-          <p>Loads instantly, no external resources required.</p>
-        </div>
-        <div class="feature">
-          <h3>🧱 Simple</h3>
-          <p>Built with just HTML & CSS — nothing to maintain.</p>
-        </div>
-        <div class="feature">
-          <h3>🔐 Private</h3>
-          <p>No trackers, no fonts, no images. Just your content.</p>
-        </div>
-      </div>
+    <section id="favorites">
+      <h2>🏞 Our Favorite Hiking Trails</h2>
+      <p>From peaceful forest paths to rugged mountain ascents, these trails are loved by our team and the community. Each offers a unique experience worth exploring.</p>
+    </section>
+
+    <section id="dogs">
+      <h2>🐕 Dog Friendly Hiking Trails</h2>
+      <p>Bring your four-legged friend along! These trails are perfect for pets — with accessible paths, shade, and even water features.</p>
+    </section>
+
+    <section id="gear">
+      <h2>🎒 Recommended Gear</h2>
+      <p>Lightweight backpacks, moisture-wicking clothes, and durable hiking boots — here's what we recommend for a safe and comfortable journey.</p>
+    </section>
+
+    <section id="maps">
+      <h2>🗺 Trail Maps</h2>
+      <p>Get the lay of the land before you set out. We offer trail descriptions and simplified maps for each location — printable and offline-friendly.</p>
+    </section>
+
+    <section id="contact">
+      <h2>📬 Contact Us</h2>
+      <p>Have questions, suggestions, or trail recommendations? Reach out via email or connect with us on social platforms. We're happy to hear from fellow explorers.</p>
+    </section>
+
+    <section id="faq">
+      <h2>❓ FAQ</h2>
+      <p><strong>Do I need a permit?</strong> Some trails require permits, especially in protected areas. Check local park services.</p>
+      <p><strong>Can I hike in winter?</strong> Absolutely, but always check conditions and bring appropriate gear.</p>
     </section>
   </main>
 
   <footer>
-    &copy; 2025 CleanStart. All rights reserved.
+    &copy; 2025 TrailQuest. Adventure responsibly.
   </footer>
 </body>
 </html>
